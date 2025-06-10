@@ -11,6 +11,14 @@ import numpy as np
 from matplotlib import font_manager
 import matplotlib.patches as mpatches
 
+# LaTeX配置
+plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "serif",
+    "font.serif": ["Times New Roman"],
+    "text.latex.preamble": r"\usepackage{amsmath}"
+})
+
 # Font configuration
 try:
     font_prop = font_manager.FontProperties(family="Times New Roman")
@@ -217,7 +225,7 @@ def create_parameter_sensitivity():
     plt.axvspan(10, 50, alpha=0.2, color="green", label="Robust Range")
 
     plt.xlabel(
-        "Minimum Co-cluster Size (T_m = T_n)",
+        "Minimum Co-cluster Size ($T_m = T_n$)",
         fontproperties=font_prop,
         fontsize=AXIS_LABEL_FONT_SIZE,
     )
@@ -268,7 +276,7 @@ def create_parameter_sensitivity():
     )
 
     plt.xlabel(
-        "Probability Threshold (P_thresh)",
+        "Probability Threshold ($P_{thresh}$)",
         fontproperties=font_prop,
         fontsize=AXIS_LABEL_FONT_SIZE,
     )
